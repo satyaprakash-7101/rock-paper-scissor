@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title>
+            game
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+    <style>
+        .few{
+            background-color:white;
+            align-content: center;
+            border-radius: 30px;
+            padding: 100px;
+            margin-right: 35px;
+            font-size: 35px;
+            color:#ffc04d;
+            font-family: fantasy;
+            margin-left: 20px;
+        }
+        .jumbotron{
+            color:white;
+            background-color: #9d9dff;
+            
+        }
+        #p1{
+            background-color: orange;
+            font-size: medium;
+            height:100px;
+        }
+        #p2{
+            background-color: orangered;
+            font-size: medium;
+            height:100px;
+        }
+        #p {
+            background-color: orangered;
+            font-size: medium;
+            margin-top:20px ;
+            height:40px;
+            padding-top: 5px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        #p p{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+        }
+        body{
+            background:url(L-1118477-1481560705-7565.jpeg.jpg);
+
+        }
+       
+    </style>
+    
+    <body>
+        <div class="jumbotron">
+            <h1 style="font-size: 50px 
+            font-weight: 200;"> Welcome to the game</h1>
+        </div>
+        <div class="container">
+           <div class="row "> 
+                <div class="col">
+                <button class="few" id="stone" onclick="getval(this.id)">stone</button>
+                </div>
+
+                <div class="col ">
+                    <button class="few" id="scissor" onclick="getval(this.id)" >scissor</button>
+                </div>
+
+                <div class="col ">
+                    <button class="few" id="paper" onclick="getval(this.id)">paper</button>
+                </div>
+            </div>
+        </div>
+        <table class="container table table-bordered" style="margin-top: 40px;">
+            <thead>
+              <tr style="background-color:#00ffff ">
+                
+                <th scope="col">player score</th>
+                <th scope="col">comp score</th>
+                <th scope="col">computer choice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: whitesmoke;">    
+                
+                <td id="ps">0</td>
+                <td id = "cs">0</td>
+                <td id="cc">nothing choosed till now</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        
+        
+     
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+
+    
+    </div>
+    <script>
+        var s1= 0;
+        var s2 = 0;
+        var s2 = 0;
+        var a = ["stone", "paper", "scissor"];
+        function getval(e){
+            var choice = e;
+            console.log(choice);
+            calc(choice);
+            
+        }
+        function calc(u){
+            console.log(u);
+            console.log(a);
+            
+            var comp = a[Math.floor(Math.random() * 3)];
+            console.log(comp);
+            document.getElementById('cc').innerText = comp;
+
+            if(u =="stone" && comp == "scissor"){
+                s1 = s1 + 1;
+                document.getElementById('ps').innerText = s1;
+            }else if( u =="paper" && comp == "stone" )
+            {
+                s1 = s1 + 1;
+                document.getElementById('ps').innerText = s1;
+            }else if( u =="scissor" && comp == "paper" )
+            {
+                s1 = s1 + 1;
+                document.getElementById('ps').innerText = s1;
+            }
+            else{
+                s2 = s2 +1;
+                document.getElementById('cs').innerText = s2;
+            }
+            
+            
+
+        }
+        function change()
+        {
+
+        }
+        
+    </script>
+</html>
